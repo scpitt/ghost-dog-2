@@ -1,0 +1,24 @@
+// Timejam
+
+// Timejam for Rolljam with Hackrf Portapack
+
+// Code 
+
+void setup() {
+Serial.begin(9600);
+pinMode(51, INPUT);
+pinMode(53, OUTPUT);
+}
+
+void loop ()
+{
+int Remote =digitalRead(51);
+if (Remote) {
+Serial.prinln("                                      Remote Control detected , Timejam activated ...");
+digitalWrite(53, HIGH);
+delay (45000);
+} else {
+Serial.println(" === nothing detected ..");
+}
+delay (260);
+}
